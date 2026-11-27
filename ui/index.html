@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mediaportal</title>
+  </head>
+  <body>
+    <h1>mediaportal</h1>
+    <p>core version: <span id="version">…</span></p>
+    <script>
+      window.__TAURI__.core
+        .invoke("core_version")
+        .then((v) => (document.getElementById("version").textContent = v));
+    </script>
+  </body>
+</html>
